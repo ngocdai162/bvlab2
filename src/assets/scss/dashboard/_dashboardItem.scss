@@ -1,0 +1,8 @@
+.dashboard-item {
+    span {
+        @include primary-text;
+    }
+    p {
+        @include primary-text;
+    }
+}
