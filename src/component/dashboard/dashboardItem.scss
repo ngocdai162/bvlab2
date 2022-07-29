@@ -4,20 +4,20 @@
     width: 100%;
     height: 100%;
     span {
-        @include primary-text;
+        @include text-12;
         margin-right: 10px;
     }
     p {
-        @include primary-text;
+        @include text-12;
     }
     &:hover {
         span {
-            @include primary-text;
+            @include text-12;
             color: $button-color;
             margin-right: 10px;
         }
         p {
-            @include primary-text;
+            @include text-12;
             color: $while-color;
         }
     }

@@ -34,13 +34,27 @@
         }
         
         &__detail {
-            padding: $main-padding;
-            @include flex;
+            padding: $main-padding 0px;;
+            @include flex-between;
+            height: 140px;
+         
             &__month {
+                width: 50%;
+                // height: 100%;
+                p {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: $while-color;
+                }
                 .schedule-month {
-                    @include flex-between;
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
                     &__img {
                         @include flex;
+                        height: 60px;
+                        width: 60%;
                         position: relative;
                         &__item {
                             width: 60px;
@@ -48,51 +62,101 @@
                             border-radius: 20px;
                             overflow: hidden;
                             position: absolute;
+                            bottom: 0px;
                             img {
                                 width: 100%;
                                 height: 100%;
                             }
-                            top: 0px;
                         }
                         &--1 {
-                            right: 10px;
+                            left: 0px;
                         }
                         &--2 {
-                            right: 50px;
-                            z-index: 2;
+                            left: 40px;
                         }
                         &--3 {
-                            right: 90px;
-                            z-index: 3;
+                            left: 80px;
                         }
                         &--4 {
-                            right: 130px;
-                            z-index: 4;
+                            left: 120px;
                         }
                     }
                     &__checkout {
                         @include flex;
+                        cursor: pointer;
                         span {
                             @include primary-text;
                             margin-right: 5px;
                         }
-                        i {
-                          font-size: 14px;
-                          color: $text-color;
+                        &__icon {
+                            width: 14px;
+                            height:14px;
+                            @include flex-center;
+                            border-radius: 5px;
+                            border: 1px solid $text-color;
+                            i {
+                                font-size: 8px;
+                                color: $text-color;
+                              }
                         }
+                       
                     }
                 }
             }
             &__day {
-
+                width: 20%;
+                height: 100%;
+                @include flex-center-reverse;
+                span {
+                    color: $while-color;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
+                p {
+                    @include primary-text;
+                }
             }
             &__week {
+                width: 20%;
+                height: 100%;
+                @include flex-center-reverse;
+                span {
+                    color: $while-color;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                }
+                p {
+                    @include primary-text;
+                }
 
             }
             &__item {
                 background-color: $background-content-color;
                 border-radius: $radius-module;
                 padding: 10px 12px;
+            }
+            
+        }
+    }
+    &__calendar {
+        h1 {
+           @include text-16;
+           margin-bottom: 24px;
+        }
+        .ant-picker-calendar-full {
+            background-color: $background-content-color;
+            color: $text-color;
+            .ant-picker-panel {
+                background-color: $background-content-color;
+            }
+            .ant-picker-calendar-date-value {
+                color: $text-color !important;
+            }
+            th {
+                color: $text-color !important;
+            }
+            .ant-picker-cell-inner {
+                border: none;
             }
         }
     }

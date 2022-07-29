@@ -87,7 +87,7 @@
         }
         button {
             background-color: $button-color;
-            color: $while-color;
+            @include text-12;
             border-radius: 10px;
             height: $height-module;
             border: none;
@@ -95,6 +95,7 @@
             i {
                 color: $while-color;
                 margin-right: 10px;
+                font-size: 12px;
             }
         }
     }

@@ -5,9 +5,7 @@
         padding: 0px 20px;
         background-color: $button-color;
         border-radius: $radius-module;
-        font-size: $text-size;
-        font-weight: 400;
-        color: $while-color;
+        @include text-12;
         border: none;
         &:hover {
             cursor: pointer;

@@ -4,7 +4,7 @@ const AvatarIcon = (props) => {
     return(
         <div className="avatar">
             <div className="avatar__img">
-              <img src="../images/avt.jpg" alt=""/>
+              <img src={props.imgSrc} alt=""/>
             </div>
             <div className="avatar__icon">
               {props.icon()}

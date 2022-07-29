@@ -2,9 +2,12 @@ import React from "react";
 import ButtonCustom from "../common/ButtonCustom";
 import AvatarIcon from "./AvatarIcon/AvatarIcon";
 import { PlusOutlined} from '@ant-design/icons';
+import { Calendar } from 'antd';
 import "./container.scss";
 const Container = () => {
-
+    const onPanelChange = (value, mode) => {
+        console.log(value.format('YYYY-MM-DD'), mode);
+      };
     return (
         <div className="container">
             <div className="container__add">
@@ -18,19 +21,19 @@ const Container = () => {
                 icon={() => (
                     <i class="fa-brands fa-tiktok"></i>
                 )}
-                imgSrc='../images/avt.jpg'
+                imgSrc='../images/avt-2.jpg'
               />
               <AvatarIcon 
                 icon={() => (
                   <i class="fa-brands fa-youtube"></i>
                 )}
-                imgSrc='../images/avt.jpg'
+                imgSrc='../images/avt-3.jpg'
               />
               <AvatarIcon 
                 icon={() => (
                     <i class="fa-brands fa-tiktok"></i>
                 )}
-                imgSrc='../images/avt.jpg'
+                imgSrc='../images/avt-4.jpg'
               />
               <button className="container__add__btn">
                 <PlusOutlined />
@@ -42,7 +45,7 @@ const Container = () => {
                   <ButtonCustom text='Create a Post'/>
                 </div>
               <div className="container__schedule__detail">
-                <div className="container__schedule__detail__item container__schedule__detail__month">
+                <div className="container__schedule__detail__month container__schedule__detail__item ">
                     <p>Last Month Highlights</p>
                     <div className="schedule-month">
                        <div className='schedule-month__img'>
@@ -50,28 +53,37 @@ const Container = () => {
                             <img src="../images/avt.jpg" alt=""/>
                         </div>
                         <div className='schedule-month__img__item schedule-month__img--2'>
-                            <img src="../images/avt.jpg" alt=""/>
+                            <img src="../images/avt-2.jpg" alt=""/>
                         </div>
                         <div className='schedule-month__img__item schedule-month__img--3'>
-                            <img src="../images/avt.jpg" alt=""/>
+                            <img src="../images/avt-3.jpg" alt=""/>
                         </div>
                         <div className='schedule-month__img__item schedule-month__img--4'>
-                            <img src="../images/avt.jpg" alt=""/>
+                            <img src="../images/avt-4.jpg" alt=""/>
                         </div>
                        </div>
                        <div className='schedule-month__checkout'>
                         <span>Check out</span>
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <div className="schedule-month__checkout__icon">
+                          <i class="fa-solid fa-chevron-right"></i>
+                        </div>
                        </div>
                     </div>
                 </div>
-                <div className="container__schedule__detail__item container__schedule__detail__day"></div>
-                <div className="container__schedule__detail__item container__schedule__detail__week"></div>
+                <div className="container__schedule__detail__day container__schedule__detail__item ">
+                    <span>2</span>
+                    <p>Schedules for today</p>
+                </div>
+                <div className="container__schedule__detail__week container__schedule__detail__item ">
+                    <span>3</span>
+                    <p>Posted this week</p>
+                </div>
               </div>
 
             </div>
             <div className="container__calendar">
-
+               <h1>September</h1>
+               <Calendar width ='200' onPanelChange={onPanelChange} />
             </div>
         </div>
     )
