@@ -1,0 +1,24 @@
+@import '../common/scss/all.scss';
+.dashboard-item {
+    @include flex;
+    width: 100%;
+    height: 100%;
+    span {
+        @include primary-text;
+        margin-right: 10px;
+    }
+    p {
+        @include primary-text;
+    }
+    &:hover {
+        span {
+            @include primary-text;
+            color: $button-color;
+            margin-right: 10px;
+        }
+        p {
+            @include primary-text;
+            color: $while-color;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import './buttonCustom.scss';
 const ButtonCustom = (props) => {
     return(
         <div className="button-custom">
@@ -8,4 +9,4 @@ const ButtonCustom = (props) => {
         </div>
     )
 }
-export default ButtonCustom
+export default ButtonCustom;

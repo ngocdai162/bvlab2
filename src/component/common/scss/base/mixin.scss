@@ -1,0 +1,37 @@
+@mixin primary-text {
+    color: $text-color;
+    font-size: $text-size;
+    font-weight: $text-weight;
+    margin: 0px;
+}
+
+@mixin bold-text {
+    color: #fff;
+    font-size: $text-bold-size;
+    font-weight: $text-bold-weight;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-center-reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin text-16 {
+    color: $while-color;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
+}

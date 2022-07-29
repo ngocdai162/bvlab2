@@ -3,6 +3,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import Dashboard from './component/dashboard/Dashboard';
+import Container from './component/container/Container';
 
 const { Header, Footer, Sider, Content } = Layout;
 function App() {
@@ -13,8 +14,12 @@ function App() {
          <Dashboard/>
        </Sider>
        <Layout>
-         <Content>Content</Content>
-         <Sider>Sider-2</Sider>
+         <Content>
+           <Container/>
+         </Content>
+         <Sider width="300">
+             Sider-2
+         </Sider>
        </Layout>
       </Layout>
     </div>

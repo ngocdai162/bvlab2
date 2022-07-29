@@ -1,0 +1,99 @@
+@import '../common/scss/all.scss';
+.container {
+    padding: $main-padding;
+    background-color: $background-container-color;
+    &__add {
+        height: $height-module;
+        @include flex;
+        &__btn {
+            width: $height-module;
+            height: $height-module;
+            border-radius: 50%;
+            background-color: $button-color;
+            border: none;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            font-size: 18px;
+            color: $while-color;
+            &:hover {
+                cursor: pointer;
+                background-color: $button-hover-color;
+            }
+        
+        }
+    }
+    &__schedule {
+        margin-top: $main-padding;
+        // @include flex-between;
+        &__title {
+            @include flex-between;
+            p {
+                @include text-16;
+            }
+        }
+        
+        &__detail {
+            padding: $main-padding;
+            @include flex;
+            &__month {
+                .schedule-month {
+                    @include flex-between;
+                    &__img {
+                        @include flex;
+                        position: relative;
+                        &__item {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            position: absolute;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            top: 0px;
+                        }
+                        &--1 {
+                            right: 10px;
+                        }
+                        &--2 {
+                            right: 50px;
+                            z-index: 2;
+                        }
+                        &--3 {
+                            right: 90px;
+                            z-index: 3;
+                        }
+                        &--4 {
+                            right: 130px;
+                            z-index: 4;
+                        }
+                    }
+                    &__checkout {
+                        @include flex;
+                        span {
+                            @include primary-text;
+                            margin-right: 5px;
+                        }
+                        i {
+                          font-size: 14px;
+                          color: $text-color;
+                        }
+                    }
+                }
+            }
+            &__day {
+
+            }
+            &__week {
+
+            }
+            &__item {
+                background-color: $background-content-color;
+                border-radius: $radius-module;
+                padding: 10px 12px;
+            }
+        }
+    }
+}

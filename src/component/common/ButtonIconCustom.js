@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseSquareOutlined } from '@ant-design/icons';
+import { DownloadOutlined } from '@ant-design/icons';
 const ButtonIconCustom = (props) => {
     return(
         <div className="button-custom">

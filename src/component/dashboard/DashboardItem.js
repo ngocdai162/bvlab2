@@ -1,5 +1,6 @@
 import React from "react";
 import { SettingOutlined } from '@ant-design/icons';
+import './dashboardItem.scss';
 const DashboardItem = (props) => {
     return(
         <div className="dashboard-item">
