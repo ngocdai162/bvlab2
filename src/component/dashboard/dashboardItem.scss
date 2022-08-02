@@ -3,18 +3,18 @@
     @include flex;
     width: 100%;
     height: 100%;
-    span {
+    i {
         @include text-12;
+        color: $text-color;
         margin-right: 10px;
     }
     p {
         @include text-12;
+        color: $text-color;
     }
     &:hover {
-        span {
-            @include text-12;
+       i {
             color: $button-color;
-            margin-right: 10px;
         }
         p {
             @include text-12;

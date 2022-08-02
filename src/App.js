@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import Dashboard from './component/dashboard/Dashboard';
 import Container from './component/container/Container';
+import PostSetting from './component/postSetting/PostSetting';
 
 const { Header, Footer, Sider, Content } = Layout;
 function App() {
@@ -17,9 +18,15 @@ function App() {
          <Content>
            <Container/>
          </Content>
-         <Sider width="300">
-             Sider-2
+         <Sider width="300"
+          style={{ 
+            overflow: 'auto',
+            height: '100vh',
+          }} 
+         >
+             <PostSetting/>
          </Sider>
+        
        </Layout>
       </Layout>
     </div>

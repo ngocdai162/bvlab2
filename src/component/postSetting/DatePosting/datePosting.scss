@@ -1,0 +1,57 @@
+@import '../../common/scss/all.scss';
+.date-posting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: {
+        top: 3px;
+        bottom: 3px;
+    }
+    &__date {
+        .ant-picker {
+            &::before {
+                display: block;
+                content: '';
+                border-radius: 50%;
+                width: 5px;
+                height: 5px;
+                background-color: #fff;
+                position: absolute;
+                right: -15px;
+            }
+        }
+    }
+    &__hours {
+        
+    }
+    .ant-picker {
+        border-radius: $radius-module;
+        border: $block-border;
+        background-color: $background-post-setting-content;
+        position: relative;
+       &-input {
+        display: flex !important;
+        align-items: center;
+        flex-direction: row-reverse !important;
+        input {
+            color: $text-color;
+            font-size: $text-size;
+            
+        }
+        span {
+            @include primary-text;
+            // position: unset !important;
+            left: 0px;
+            width:  fit-content;
+            margin-right: 6px;
+        }
+        .ant-picker-clear {
+            background: none !important;
+            :hover {
+             background:  none !important; 
+             color: $while-color;             
+            }
+        }
+       }
+    }
+}

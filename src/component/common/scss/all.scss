@@ -1,3 +1,7 @@
 @import './base/function.scss';
 @import './base/mixin.scss';
-@import './base/variable.scss'
+@import './base/variable.scss';
+
+.ant-layout-sider-dark {
+  background-color: $background-container-color;
+}

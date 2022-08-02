@@ -4,7 +4,7 @@ import './dashboardItem.scss';
 const DashboardItem = (props) => {
     return(
         <div className="dashboard-item">
-            <SettingOutlined />
+            <i class={props.classIcon}></i>
             <p>{props.text}</p>
         </div>
     )

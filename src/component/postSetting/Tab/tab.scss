@@ -1,0 +1,34 @@
+@import '../../common/scss/all.scss';
+.tab {
+    margin : 6px 5px 6px 0px;
+    display: inline;
+
+    background:  linear-gradient(to right, #a04fd8 , #694bfa);
+    height: 24px;
+    border-radius: $radius-module;
+    width: fit-content;
+    // float: left;
+    padding: {
+        top: 8px;
+        right: 15px;
+        bottom: 8px;
+        left: 15px;
+    }
+    @include flex;
+    &:hover {
+       background:  linear-gradient(to right, #b96df0 , #8168ff);
+       cursor: pointer;
+    }
+    span {
+        color : $while-color;
+        font-size: $text-size;
+    }
+    svg {
+        margin-left: 5px;
+        color : $while-color;
+        font-size: $text-size;
+        cursor: pointer;
+
+    }
+
+}

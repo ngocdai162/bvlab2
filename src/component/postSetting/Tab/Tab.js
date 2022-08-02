@@ -1,9 +1,10 @@
 import React from "react";
 import { CloseSquareOutlined } from '@ant-design/icons';
+import './tab.scss';
 const Tab = (props) => {
     return(
-        <div className="avt">
-            <img src={props.srcImg} alt=""/>
+        <div className="tab">
+            <span>{props.text}</span>
             <CloseSquareOutlined/>
         </div>
     )

@@ -16,14 +16,22 @@ const Dashboard = (props) => {
               <div className="dashboard__main__menu">
                 <ul>
                     <li>
-                      <DashboardItem text = "Setting"/>
+                      <DashboardItem text = "Dashboard" classIcon='fa-solid fa-gear'/>
                     </li>
                     <li>
-                      <DashboardItem text = "Setting"/>
-                    </li> <li>
-                      <DashboardItem text = "Setting"/>
-                    </li> <li>
-                      <DashboardItem text = "Setting"/>
+                      <DashboardItem text = "Calendar"  classIcon='fa-solid fa-calendar'/>
+                    </li> 
+                    <li>
+                      <DashboardItem text = "Analytics"  classIcon='fa-solid fa-chart-line'/>
+                    </li> 
+                    <li>
+                      <DashboardItem text = "Ads"  classIcon='fa-solid fa-headset'/>
+                    </li>
+                    <li>
+                      <DashboardItem text = "Campaigns"  classIcon='fa-solid fa-backpack'/>
+                    </li>
+                    <li>
+                      <DashboardItem text = "Setting"  classIcon='fa-solid fa-calendar'/>
                     </li>
                 </ul>
               </div>

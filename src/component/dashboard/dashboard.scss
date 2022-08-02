@@ -5,6 +5,8 @@
     background-color: $background-dashboard-color;
     padding: 20px 0px;
     height: 100vh;
+    // position: fixed;
+    bottom: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,7 +43,8 @@
                 padding: 12px;
                 width: 100%;
                 li {
-                    padding: 15px;
+                    height: 40px;;
+                    padding-left: 5px;;
                     border-radius: 10px;
                     @include flex;
                     &:hover {

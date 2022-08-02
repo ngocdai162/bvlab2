@@ -2,12 +2,87 @@ import React from "react";
 import ButtonCustom from "../common/ButtonCustom";
 import AvatarIcon from "./AvatarIcon/AvatarIcon";
 import { PlusOutlined} from '@ant-design/icons';
-import { Calendar } from 'antd';
+import { Badge, Calendar } from 'antd';
 import "./container.scss";
+import moment from 'moment'
+import AvatarCalendar from "./AvatarCalendar/AvatarCalendar";
+import { Avatar, Divider, Tooltip } from 'antd';
+
 const Container = () => {
+  const getListData = (value) => {
+    let listData;
+    switch (value.date()) {
+      case 1:
+        listData =[
+          {
+            srcImg : '../images/avt-3.jpg'
+          }
+        ]
+        break
+      ;
+      
+      case 5:
+        listData =[
+          {
+            srcImg : '../images/avt-2.jpg'
+          },
+          {
+            srcImg : '../images/avt-3.jpg'
+          },
+          {
+            srcImg : '../images/avt.jpg'
+          }
+        ]
+        break
+      ; 
+
+      case 14 :
+        listData =[
+          {
+            srcImg : '../images/avt.jpg'
+          }
+        ]
+        break;
+        default : 
+      }
+    
+    return listData || [];
+  }
+  
+  // const dateCellRender = (value) => {
+  //   const listData = getListData(value);
+  //   return (
+  //       (
+  //        <Avatar.Group>
+  //            {listData.map (item => (
+  //             <Avatar src = {item.srcImg}/>
+  //            ))}
+  //         </Avatar.Group>
+  //       )
+  //   );
+  // };
+
+  const dateCellRender = (value) => {
+    const listData = getListData(value);
+    return (
+        (
+         <Avatar.Group>
+             {listData.map (item => (
+              <Avatar src = {item.srcImg}/>
+             ))}
+          </Avatar.Group>
+        )
+    );
+  };
+
     const onPanelChange = (value, mode) => {
         console.log(value.format('YYYY-MM-DD'), mode);
       };
+
+    //thay doi thu tu cot cua calendar
+    moment.updateLocale('en', {
+        weekdaysMin : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"]
+      });
     return (
         <div className="container">
             <div className="container__add">
@@ -83,7 +158,7 @@ const Container = () => {
             </div>
             <div className="container__calendar">
                <h1>September</h1>
-               <Calendar width ='200' onPanelChange={onPanelChange} />
+               <Calendar width ='200' dateCellRender={dateCellRender} onPanelChange={onPanelChange} format ='MM-DD' />
             </div>
         </div>
     )

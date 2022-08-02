@@ -1,0 +1,72 @@
+@import '../common/scss/all.scss';
+.post-setting {
+    padding: $main-padding;
+    background-color: $background-content-color;
+    border-top-left-radius: $radius-module;
+    border-bottom-left-radius: $radius-module;
+    h1 {
+        color: $while-color;
+        font-size: 18px;
+        text-align: center;
+    }
+    &__img {
+        // margin-top: $main-padding;
+        &__block {
+            overflow: hidden;
+            border-radius: $radius-module;
+            width: 100%;
+            height: 180px;
+            img {
+                width: 100%;
+
+            }
+        }
+    }
+    &__description {
+        &__detail {
+            textarea {
+                border-radius: $radius-module;
+                background-color: $background-post-setting-content;
+                // border: none;
+                border: $block-border;
+                outline: none;
+                @include primary-text;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                &:focus {
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+    &__date {
+        // margin-top: $main-padding;
+       
+    }
+    &__tags {
+        &__detail {
+            // height: 120px;
+            display: inline;
+        }
+    }
+}
+.post-setting__title {
+    @include flex;
+    margin-bottom: 10px;
+    margin-top: $main-padding;
+    p {
+        @include text-12;
+        color: $text-color;
+        margin-right: 5px;
+    }
+    i {
+        color: $text-color;
+        font-size: 12px;
+        cursor: pointer;
+        &:hover {
+            color: $while-color;
+        }
+    }
+}

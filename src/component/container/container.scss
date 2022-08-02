@@ -2,6 +2,15 @@
 .container {
     padding: $main-padding;
     background-color: $background-container-color;
+    height: 100vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     &__add {
         height: $height-module;
         @include flex;
@@ -161,3 +170,35 @@
         }
     }
 }
+.ant-picker-cell  {
+    img {
+        width: 40%;
+    }
+}
+.ant-picker-calendar-date-content {
+    position: relative;
+    // .avt-calendar {
+    //     position: absolute;
+    //     left: 10px;
+    //     bottom: 10px;
+    // }
+    .ant-avatar-group {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        .ant-avatar-image {
+            border-radius: 5px;
+            border-color: rgb(61, 61, 61);
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+.ant-picker-cell-selected {
+    .ant-picker-calendar-date-today {
+        background:  linear-gradient(to right, #a04fd8 , #694bfa) !important;
+        
+    }
+}
+
