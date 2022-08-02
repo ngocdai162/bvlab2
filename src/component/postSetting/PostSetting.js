@@ -48,7 +48,6 @@ const PostSetting = () => {
                   <Tab text='Jumb'/>
                   <Tab text='Relax'/>
                   <Tab text='Favorite'/>
-
                 </div>
             </div>
         </div>
