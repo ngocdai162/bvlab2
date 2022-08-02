@@ -9,10 +9,11 @@ import AvatarCalendar from "./AvatarCalendar/AvatarCalendar";
 import { Avatar, Divider, Tooltip } from 'antd';
 
 const Container = () => {
+
   const getListData = (value) => {
     let listData;
     switch (value.date()) {
-      case 1:
+      case 2:
         listData =[
           {
             srcImg : '../images/avt-3.jpg'
@@ -49,18 +50,6 @@ const Container = () => {
     return listData || [];
   }
   
-  // const dateCellRender = (value) => {
-  //   const listData = getListData(value);
-  //   return (
-  //       (
-  //        <Avatar.Group>
-  //            {listData.map (item => (
-  //             <Avatar src = {item.srcImg}/>
-  //            ))}
-  //         </Avatar.Group>
-  //       )
-  //   );
-  // };
 
   const dateCellRender = (value) => {
     const listData = getListData(value);
@@ -158,7 +147,7 @@ const Container = () => {
             </div>
             <div className="container__calendar">
                <h1>September</h1>
-               <Calendar width ='200' dateCellRender={dateCellRender} onPanelChange={onPanelChange} format ='MM-DD' />
+               <Calendar width ='200' validRange={[moment(), moment().add(20, "years")]}  fullscreen = {true} dateCellRender={dateCellRender} onPanelChange={onPanelChange} />
             </div>
         </div>
     )
