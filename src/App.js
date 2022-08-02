@@ -18,7 +18,7 @@ function App() {
          <Content>
            <Container/>
          </Content>
-         <Sider width="300"
+         <Sider width="30%"
           style={{ 
             overflow: 'auto',
             height: '100vh',
