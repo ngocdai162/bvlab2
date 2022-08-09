@@ -1,8 +1,33 @@
 import React from "react";
+import { useState } from "react";
 import DashboardItem from "./DashboardItem";
 import './dashboard.scss';
+import { Button, Menu } from 'antd';
+import { MenuOutlined,CalendarOutlined,LineChartOutlined,DotChartOutlined,FieldTimeOutlined,SettingOutlined } from '@ant-design/icons';
 
 const Dashboard = (props) => {
+  const getItem=(label, key, icon) =>{
+    return {
+      key,
+      icon,
+      label,
+    };
+  }
+  const items = [
+    getItem('Dashboard', '1',<MenuOutlined />),
+    getItem('Calendar', '2',<CalendarOutlined /> ),
+    getItem('Analytics', '3',<LineChartOutlined /> ),
+    getItem('Ads', '4',<DotChartOutlined />),
+    getItem('Campaigns', '5',<FieldTimeOutlined /> ),
+    getItem('Setting', '6',<SettingOutlined /> ),
+    
+  ]
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+  
     return(
         <div className="dashboard">
             <div className="dashboard__main">
@@ -14,26 +39,13 @@ const Dashboard = (props) => {
                 </div>
               </div>
               <div className="dashboard__main__menu">
-                <ul>
-                    <li>
-                      <DashboardItem text = "Dashboard" classIcon='fa-solid fa-gear'/>
-                    </li>
-                    <li>
-                      <DashboardItem text = "Calendar"  classIcon='fa-solid fa-calendar'/>
-                    </li> 
-                    <li>
-                      <DashboardItem text = "Analytics"  classIcon='fa-solid fa-chart-line'/>
-                    </li> 
-                    <li>
-                      <DashboardItem text = "Ads"  classIcon='fa-solid fa-headset'/>
-                    </li>
-                    <li>
-                      <DashboardItem text = "Campaigns"  classIcon='fa-solid fa-backpack'/>
-                    </li>
-                    <li>
-                      <DashboardItem text = "Setting"  classIcon='fa-solid fa-calendar'/>
-                    </li>
-                </ul>
+                <Menu
+                defaultSelectedKeys={['2']}
+                mode="inline"
+                theme="dark"
+                inlineCollapsed={collapsed}
+                items={items}
+                />
               </div>
             </div>
             <div className="dashboard__account">

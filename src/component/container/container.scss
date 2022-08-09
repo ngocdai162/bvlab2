@@ -152,29 +152,62 @@
            @include text-16;
            margin-bottom: 24px;
         }
-        .ant-picker-calendar-full {
-            background-color: $background-content-color;
-            color: $text-color;
-            .ant-picker-panel {
-                background-color: $background-content-color;
-            }
-            .ant-picker-calendar-date-value {
-                color: $text-color !important;
+        .fc .fc-toolbar.fc-header-toolbar {
+            display: none;
+        }
+        table {
+            max-width: 100%;
+            border: none !important;
+            a {
+                @include primary-text;
             }
             th {
-                color: $text-color !important;
+                border: $block-border;
             }
-            .ant-picker-cell-inner {
-                border: none;
+            td {
+                border: $block-border;
+
+            }
+            thead {
+                tr {
+                    th {
+                        border: none !important;
+                    }
+                }
+            }
+            tbody {
+                border-radius: 10px !important;
+                background-color: $background-content-color;
             }
         }
+        .fc-daygrid-day-frame  {
+            position: relative;
+            .fc-daygrid-day-events {
+                position: absolute !important;
+                bottom: 0px;
+                left: 0px;
+            }
+        }
+        .fc-daygrid-event-harness {
+            a {
+                background-color: transparent !important;
+                border: none;
+                .fc-event-main {
+                    span {
+                        border: $block-border;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+        .ant-avatar-square {
+            border-radius: 8px;;
+        }
+       
     }
 }
-.ant-picker-cell  {
-    img {
-        width: 40%;
-    }
-}
+
 .ant-picker-calendar-date-content {
     position: relative;
     // .avt-calendar {
@@ -194,14 +227,5 @@
             }
         }
     }
-}
-.ant-picker-cell-selected {
-    .ant-picker-calendar-date-today {
-        background:  linear-gradient(to right, #a04fd8 , #694bfa) !important;
-        
-    }
-}
-.ant-picker-calendar-header {
-    display: none !important;
 }
 
