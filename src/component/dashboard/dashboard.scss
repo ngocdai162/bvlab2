@@ -121,6 +121,9 @@
                 font-size: 12px;
             }
             cursor: pointer;
+            &:hover {
+                background-color: $button-hover-color;
+            }
         }
     }
     

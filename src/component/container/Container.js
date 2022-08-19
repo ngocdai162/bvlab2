@@ -1,18 +1,19 @@
 import React from "react";
-import ButtonCustom from "../common/ButtonCustom";
+import ButtonCustom from '../common/ButtonCustom';
 import AvatarIcon from "./AvatarIcon/AvatarIcon";
 import { PlusOutlined} from '@ant-design/icons';
 import { Badge, Calendar } from 'antd';
 import "./container.scss";
-import moment from 'moment'
+import moment from 'moment';
 import AvatarCalendar from "./AvatarCalendar/AvatarCalendar";
 import { Avatar, Divider, Tooltip } from 'antd';
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import Item from "antd/lib/list/Item";
+import CalendarContent from "./CalendarContent/CalendarContent";
+import Campaigns from "./Campaigns/Campaigns";
 
 const Container = () => {
- 
   // moment.updateLocale('en', {
     //         weekdaysMin : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun"]
     //       });
@@ -135,15 +136,8 @@ const Container = () => {
               </div>
 
             </div>
-            <div className="container__calendar">
-               <h1>September</h1>
-               <FullCalendar
-                 plugins={[ dayGridPlugin ]}
-                 initialView="dayGridMonth"
-                 eventContent={renderEventContent}
-                 events = {eventsData}
-               />
-            </div>
+            {/* <CalendarContent/> */}
+            {/* <Campaigns/> */}
         </div>
     )
 }

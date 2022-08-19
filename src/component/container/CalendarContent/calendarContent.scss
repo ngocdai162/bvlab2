@@ -1,0 +1,63 @@
+@import '../../common/scss/all.scss';
+.contaner__calendar {
+    h1 {
+       @include text-16;
+       margin-bottom: 24px;
+    }
+    .fc .fc-toolbar.fc-header-toolbar {
+        display: none;
+    }
+    table {
+        max-width: 100%;
+        border: none !important;
+        a {
+            @include primary-text;
+        }
+        th {
+            border: $block-border;
+        }
+        td {
+            border: $block-border;
+
+        }
+        thead {
+            tr {
+                th {
+                    border: none !important;
+                }
+            }
+        }
+        tbody {
+            border-radius: 10px !important;
+            background-color: $background-content-color;
+        }
+    }
+    .fc-daygrid-day-frame  {
+        position: relative;
+        .fc-daygrid-day-events {
+            position: absolute !important;
+            bottom: 0px;
+            left: 0px;
+        }
+    }
+    .fc-daygrid-event-harness {
+        a {
+            background-color: transparent !important;
+            border: none;
+            .fc-event-main {
+                span {
+                    border: $block-border;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+    .fc-day-today  {
+        background-image: linear-gradient(to bottom right,#653884 , #43369a);
+    }
+    .ant-avatar-square {
+        border-radius: 8px;;
+    }
+   
+}

@@ -4,6 +4,8 @@ import { useFormik } from "formik";
 
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signInUser } from "../redux/slice/isUser";
 
 const appBackground = "#2e1c48";
 const formBackground = "#414b7d";
@@ -53,9 +55,6 @@ const FormStyled = styled.form`
         border-radius: 5px; ;
         border: 0px;
         outline:  none ;
-        &:focus {
-            background: #191c24;
-        }
     }
     button {
         cursor: pointer;
@@ -74,6 +73,7 @@ const FormStyled = styled.form`
 `;
 
 const LoginPage = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues : {
@@ -86,7 +86,8 @@ const LoginPage = () => {
         }),
         
         onSubmit: (values) => {
-            console.log(values)
+            console.log(values);
+            dispatch(signInUser(true));
             navigate('/home');
         }
     })

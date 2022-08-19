@@ -5,3 +5,10 @@
 .ant-layout-sider-dark {
   background-color: $background-container-color;
 }
+.content-text {
+  color: #fff;
+  font-size: 40px;;
+}
+.ant-layout-content::-webkit-scrollbar {
+  display: none !important;
+}

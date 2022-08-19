@@ -7,11 +7,14 @@ import { MenuOutlined,CalendarOutlined,LineChartOutlined,DotChartOutlined,FieldT
 import { useDispatch, useSelector } from "react-redux";
 import { dashboardSelector } from "../../redux/selectors";
 import { activeTab } from "../../redux/slice/dashboardSlice";
+import { signOutUser } from "../../redux/slice/isUser";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const dashboardActive = useSelector(dashboardSelector);
-  console.log(dashboardActive)
+
   const getItem=(label, key, icon) =>{
     return {
       key,
@@ -35,6 +38,12 @@ const Dashboard = (props) => {
   const toggleCollapsed = (e) => {
     setCollapsed(!collapsed);
   };
+
+  //SIGN OUT
+  const handleSignOut = () => {
+    dispatch(signOutUser);
+    navigate("/");
+  }
     return(
         <div className="dashboard">
             <div className="dashboard__main">
@@ -62,7 +71,7 @@ const Dashboard = (props) => {
               </div>
               <p>Vanessa</p>
               <span>@vanessasays</span>
-              <button>
+              <button onClick={handleSignOut}>
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Sign out
               </button>
