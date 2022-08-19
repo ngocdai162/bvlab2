@@ -1,36 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Layout } from 'antd';
-import Dashboard from './component/dashboard/Dashboard';
-import Container from './component/container/Container';
-import PostSetting from './component/postSetting/PostSetting';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Home from './pages/Home';
+import LoginPage from './pages/LoginPage';
 
-const { Header, Footer, Sider, Content } = Layout;
 function App() {
+  
   return (
-    <div className="App">
-      <Layout>
-       <Sider>
-         <Dashboard/>
-       </Sider>
-       <Layout>
-         <Content>
-           <Container/>
-         </Content>
-         <Sider width="30%"
-          style={{ 
-            overflow: 'auto',
-            height: '100vh',
-          }} 
-         >
-             <PostSetting/>
-         </Sider>
+   
+    <BrowserRouter>
+      
+          <Routes>
+            <Route path='' element = {<LoginPage/>}/>
+            <Route path='/home' element={<Home/>}/>
+          </Routes>
         
-       </Layout>
-      </Layout>
-    </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

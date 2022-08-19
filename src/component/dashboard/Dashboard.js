@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import DashboardItem from "./DashboardItem";
 import './dashboard.scss';
 import { Button, Menu } from 'antd';
 import { MenuOutlined,CalendarOutlined,LineChartOutlined,DotChartOutlined,FieldTimeOutlined,SettingOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from "react-redux";
+import { dashboardSelector } from "../../redux/selectors";
+import { activeTab } from "../../redux/slice/dashboardSlice";
 
 const Dashboard = (props) => {
+  const dispatch = useDispatch();
+  const dashboardActive = useSelector(dashboardSelector);
+  console.log(dashboardActive)
   const getItem=(label, key, icon) =>{
     return {
       key,
@@ -14,20 +20,21 @@ const Dashboard = (props) => {
     };
   }
   const items = [
-    getItem('Dashboard', '1',<MenuOutlined />),
-    getItem('Calendar', '2',<CalendarOutlined /> ),
-    getItem('Analytics', '3',<LineChartOutlined /> ),
-    getItem('Ads', '4',<DotChartOutlined />),
-    getItem('Campaigns', '5',<FieldTimeOutlined /> ),
-    getItem('Setting', '6',<SettingOutlined /> ),
-    
+    getItem('Menu', 'Menu',<MenuOutlined />),
+    getItem('Calendar', 'calendar',<CalendarOutlined /> ),
+    getItem('Analytics', 'analytics',<LineChartOutlined /> ),
+    getItem('Ads', 'ads',<DotChartOutlined />),
+    getItem('Campaigns', 'campaigns',<FieldTimeOutlined /> ),
+    getItem('Setting', 'setting',<SettingOutlined /> ),
   ]
+  const handleClickMenu = (info) => {
+    console.log(info.key)
+    dispatch(activeTab(info.key))
+  }
   const [collapsed, setCollapsed] = useState(false);
-
-  const toggleCollapsed = () => {
+  const toggleCollapsed = (e) => {
     setCollapsed(!collapsed);
   };
-  
     return(
         <div className="dashboard">
             <div className="dashboard__main">
@@ -40,11 +47,12 @@ const Dashboard = (props) => {
               </div>
               <div className="dashboard__main__menu">
                 <Menu
-                defaultSelectedKeys={['2']}
+                defaultSelectedKeys={['menu']}
                 mode="inline"
                 theme="dark"
                 inlineCollapsed={collapsed}
                 items={items}
+                onClick = {handleClickMenu}
                 />
               </div>
             </div>
